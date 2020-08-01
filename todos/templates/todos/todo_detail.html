@@ -1,20 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Django Crash Course</title>
-</head>
-<body>
-    {% if request.user.is_authenticated %}
-        Hello {{ request.user.username }}
-    {% else %}
-        Hello anonymouse user
-    {% endif %}
-    The todo name is: {{ todo.name }}
-    The due date is {{ todo.due_date }}
+{% extends "base.html" %}
 
-    <a href="/{{ todo.id }}/update">Update this todo</a>
-    <a href="/{{ todo.id }}/delete">Delete this todo</a>
-</body>
-</html>
+{% block content %}
+    <div class="col-4 offset-4">
+            <a href="/" class="btn btn-secondary mt-3">Go home</a>
+            <div class="card mt-3">
+                <div class="card-header">
+                    <h4><a href="/{{ todo.id }}">{{ todo.name }}</a></h4>
+                </div>
+                <div class="card-body">
+                    <p>It's due {{ todo.due_date }}</p>
+                </div>
+                <div class="card-footer">
+                    <a href="/{{ todo.id }}/update" class="btn btn-secondary">
+                    Update todo</a>
+                    <a href="/{{ todo.id }}/delete" class="btn btn-secondary">
+                    Delete todo</a>
+                </div>
+            </div>
+
+    </div>  
+{% endblock content %}
+
+
+
+
