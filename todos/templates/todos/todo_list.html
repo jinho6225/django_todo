@@ -11,6 +11,9 @@
     {% else %}
         Hello anonymouse user
     {% endif %}
+
+    <a href="/create">Create a todo</a>
+
     <ul>
         {% for todo in todo_list %}
             <li><a href="/{{ todo.id }}">{{ todo.name }}</a>, it's due {{ todo.due_date }}</li>
