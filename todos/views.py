@@ -40,3 +40,8 @@ def todo_update(request, id):
         return redirect('/')
     context = { "form": form }
     return render(request, "todos/todo_update.html", context)
+
+def todo_delete(request, id):
+    todo = Todo.objects.get(id=id)
+    todo.delete()
+    return redirect('/')
