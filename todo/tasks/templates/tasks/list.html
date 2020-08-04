@@ -6,8 +6,16 @@
     <input type="submit" name="Create Task">
 </form>
 
-<div>
 {% for task in tasks %}
-<p>{{task}}</p>
+    <div>
+        <a href="{% url 'update_task' task.id %}">Update</a>
+        <a href="{% url 'delete' task.id %}">Delete</a>
+        {% comment %} <a href="update_task/{{task.id}}/">Update</a> {% endcomment %}
+
+        {% if task.complete == True %}
+            <strike>{{task}}</strike>
+        {% else %}
+            <span>{{task}}</span>
+        {% endif %}
+    </div>
 {% endfor %}
-</div>

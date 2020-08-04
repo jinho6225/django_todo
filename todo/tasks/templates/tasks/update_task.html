@@ -1,0 +1,9 @@
+<h3>Update Task</h3>
+
+{% comment %} 만약 action에 '/' 들어가면 더이상 업데이트가 아닌 생성이 된다 {% endcomment %}
+<form method="POST" action="">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" name="Update Task">
+</form>
+
