@@ -11,7 +11,7 @@ Try the application live at [https://jinhomyung.pythonanywhere.com/](https://jin
 - HTML
 - Variable CSS
 - Django
-- Django REST framework (https://www.django-rest-framework.org)
+- Django Template
 
 ## Features
   - Responsive design
