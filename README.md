@@ -1,7 +1,6 @@
-# django_todo
+# Todo App (Django Template)
 what Django is all about. basics of creating a simple todo app.
 
-# Todo App (Django Template)
 
 ## Django Template
 
