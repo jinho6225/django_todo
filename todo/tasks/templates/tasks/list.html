@@ -102,6 +102,9 @@
         cursor: pointer;
         transform: scale(1.1);
     }
+    .anchor_tag {
+        color: #263238
+    }
     .far {
         padding: var(--padding);
     }
@@ -136,12 +139,12 @@
                             <span class="content">{{task}}</span>
                         {% endif %}
                         <span class="icon">
-                            <i class="far fa-edit" aria-hidden="true">
-                                <a href="{% url 'update_task' task.id %}"></a>
-                            </i>
-                            <i class="far fa-trash-alt" aria-hidden="true">
-                                <a href="{% url 'delete' task.id %}"></a>
-                            </i>
+                            <a href="{% url 'update_task' task.id %}" class="anchor_tag">
+                                <i class="far fa-edit" aria-hidden="true"></i>
+                            </a>
+                            <a href="{% url 'delete' task.id %}" class="anchor_tag">
+                                <i class="far fa-trash-alt" aria-hidden="true"></i>
+                            </a>
                         </span>
                     </li>   
                 {% endfor %}

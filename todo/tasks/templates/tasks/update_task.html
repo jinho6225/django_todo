@@ -1,9 +1,147 @@
-<h3>Update Task</h3>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+<script
+  src="https://kit.fontawesome.com/2d323a629b.js"
+  crossorigin="anonymous"
+></script>
+<title>TO DO</title>
+<style type="text/css">
+    * {
+        font-family: "Montserrat", sans-serif;
+    }
+    :root {
+        --lightgray-color: #eceff1;
+        --white-color: #FFF;
+        --shadow-color: #777;
 
+        --padding: 8px;
+        
+        --micro-font: 10px;
+        --small-font: 12px;
+        --normal-font: 16px;
+        --large-font: 20px
+    }
+    body{
+        background: #e9ecef;
+        background: linear-gradient(90deg, #e9ecef 0%, #e5ffff 50%, #e9ecef 100%);
+    }
+    .container {
+        margin-top: 5%;
+    }
+    .header {
+        text-align: center;
+        padding: var(--padding);
+    }
+    .inputBox {
+        padding: calc(var(--padding)*2) calc(var(--padding)*3);
+        background-color: var(--white-color);
+        box-shadow: 0 10px 6px -6px var(--shadow-color);
+    }
+    form {
+        margin: 0;
+    }
+    .inputForm {
+        width: 100%;
+        display:flex;
+    }
+    #id_title {
+        flex-grow: 6;
+        border: 1px solid var(--lightgray-color);
+        padding: var(--padding);
+        width: 70%;
+    }
+    label {
+        margin: 0
+    }
+    .id_complete {
+        font-size: var(--normal-font);
+        flex-grow: 1;
+        padding: var(--padding);
+        width: 15%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .submitBtn {
+        font-size: var(--normal-font);
+        flex-grow: 1;
+        background-color: #e0f7fa;
+        border: 0;
+        width: 15%;
+    }
+    .list-container {
+        margin-top: calc(var(--padding)*2);
+    }
+    .unorder-list {
+        list-style: none;
+        padding: 0;
+    }
+    .task-list {
+        margin: 1% 0 ;
+        padding: var(--padding) calc(var(--padding)*4);
+        display: flex;
+        align-items: center;
+        background-color: var(--white-color);
+        box-shadow: 0 5px 3px -3px var(--lightgray-color);
+        width: 100%;
+    }
+
+    .content {
+        flex-grow:7;
+        padding: var(--padding);
+        width: 80%;
+        cursor: pointer;
+    }
+
+    .content.active {
+        text-decoration: line-through;
+        color: darkgrey;
+    }
+
+    .icon{
+        flex-grow:1;
+        font-size: var(--large-font);
+        padding: 0 var(--padding);
+        text-align: center;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 15%;
+        cursor: pointer;
+        transition: all 1s
+    }
+    .icon :hover{
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+    .anchor_tag {
+        color: #263238
+    }
+    .far {
+        padding: var(--padding);
+    }
+
+    @media screen and (max-width: 500px) {
+        .submitBtn {
+            font-size: var(--micro-font);
+        }
+    }
+</style>
+
+
+<div class="container">
+    <header class="header">
+        <h2>Todo List</h2>
+        <h4>(Django Template)</h4>
+    </header>
 {% comment %} 만약 action에 '/' 들어가면 더이상 업데이트가 아닌 생성이 된다 {% endcomment %}
-<form method="POST" action="">
-    {% csrf_token %}
-    {{form}}
-    <input type="submit" name="Update Task">
-</form>
-
+    <div class="inputBox"> 
+        <form method="POST" action="" class="inputForm">
+            {% csrf_token %}
+            {{form.title}}
+            <span class="id_complete"><label for="complete">complete: </label>
+            {{form.complete}}</span>
+            <input type="submit" name="Update Task" class="submitBtn" value="Update">
+        </form>
+    </div> 
+</div>
