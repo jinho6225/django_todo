@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 <script
@@ -11,7 +15,7 @@
     }
     :root {
         --lightgray-color: #eceff1;
-        --white-color: #FFF;
+        --white-color: #ffffff;
         --shadow-color: #777;
 
         --padding: 8px;
@@ -22,8 +26,8 @@
         --large-font: 20px
     }
     body{
-        background: #e9ecef;
-        background: linear-gradient(90deg, #e9ecef 0%, #e5ffff 50%, #e9ecef 100%);
+        background: #fffde7;
+        background: linear-gradient(90deg, #fffde7 0%, #f1f8e9 50%, #fffde7 100%);
     }
     .container {
         margin-top: 5%;
@@ -65,7 +69,7 @@
     .submitBtn {
         font-size: var(--normal-font);
         flex-grow: 1;
-        background-color: #e0f7fa;
+        background-color: #fff3e0;
         border: 0;
         width: 15%;
     }
@@ -122,10 +126,30 @@
     }
 
     @media screen and (max-width: 500px) {
+
+        .inputForm {
+            width: 100%;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #id_title {
+            width: 100%;
+        }
+        label {
+            margin: 0
+        }
+        .id_complete {
+            width: 50%;
+        }
         .submitBtn {
-            font-size: var(--micro-font);
+            font-size: var(--small-font);
+            width: 50%;
+            padding: var(--padding);
         }
     }
+
 </style>
 
 
