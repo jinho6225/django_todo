@@ -9,7 +9,7 @@ Try the application live at [https://jinhomyung.pythonanywhere.com/](https://jin
 
 ## Technologies Used
 - HTML
-- Variable CSS
+- CSS Variables 
 - Django
 - Django Template
 
